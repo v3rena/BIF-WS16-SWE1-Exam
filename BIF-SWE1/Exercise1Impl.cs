@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BIF.SWE1.Exam
 {
-    public class Test1 : ITest1
+    public class Exercise1Impl : IExercise1
     {
         public object Method1(int i, string str, object obj)
         {
