@@ -1,9 +1,9 @@
-﻿Template Version
+Template Version
 ================
 
 -----------	-----------
 Fach		BIF/SWE1
-Antritt		2ter
-Datum		8.5.2015
+Antritt		1ter
+Datum		21.1.2016
 -----------	-----------
 
