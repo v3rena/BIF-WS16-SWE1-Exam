@@ -7,21 +7,60 @@ using System.Threading.Tasks;
 
 namespace BIF.SWE1.Exam
 {
+    public interface ICalculator
+    {
+        int Add(int a, int b);
+        int Sub(int a, int b);
+        String format(int i);
+    }
+
     public class Exercise1Impl : IExercise1
     {
+        class Calculator : ICalculator
+        {
+            public int Add(int a, int b)
+            {
+                return a + b;
+            }
+
+            public string format(int i)
+            {
+                throw new ArgumentNullException();
+            }
+
+            public int Sub(int a, int b)
+            {
+                return a - b;
+            }
+        }
+
+        public interface IMyInterface
+        {
+            int Add(int a, int b);
+        }
+
+        public class MyInterface : IMyInterface
+        {
+            public int Add(int a, int b)
+            {
+                return a + b;
+            }
+        }
+
         public object Method1(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+            return new Calculator();
         }
 
         public object Method2(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+
+            return new MyInterface();
         }
 
         public object Method3(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public object Method4(int i, string str, object obj)

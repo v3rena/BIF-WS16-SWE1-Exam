@@ -29,6 +29,8 @@ namespace BIF.SWE1.Exam
             Exercise4();
             Console.WriteLine();
             Exercise5();
+
+            Console.ReadKey();
         }
 
         private static void Trap(Action a)
@@ -53,9 +55,9 @@ namespace BIF.SWE1.Exam
             IExercise1 test = new Exercise1Impl();
             Trap(() => { test.Method1(0, string.Empty, null); });
             Trap(() => { test.Method2(0, string.Empty, null); });
-            Trap(() => { test.Method3(0, string.Empty, null); });
-            Trap(() => { test.Method4(0, string.Empty, null); });
-            Trap(() => { test.Method5(0, string.Empty, null); });
+            //Trap(() => { test.Method3(0, string.Empty, null); });
+            //Trap(() => { test.Method4(0, string.Empty, null); });
+            //Trap(() => { test.Method5(0, string.Empty, null); });
         }
         /// <summary>
         /// Remove/Change anything you need to test your submission
