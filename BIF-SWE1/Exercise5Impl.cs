@@ -11,12 +11,30 @@ namespace BIF.SWE1.Exam
     {
         public object Method1(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+            IDictionary<string, string> Matrikel = new Dictionary<string, string>();
+            Matrikel.Add("if99x123", "Maria Wagner");
+            Matrikel.Add("if99x321", "Peter Gruber");
+            return Matrikel;
+
+            /*return new Dictionary<string, string>()
+            {
+                { "if99x123", "Maria Wagner" },
+                { "if99x321", "Peter Gruber" },
+            };*/
         }
 
         public object Method2(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+            Queue<string> Cars = new Queue<string>();
+            Cars.Enqueue("Peugeot");
+            Cars.Enqueue("Opel");
+            return Cars;
+
+            /*var lst = new LinkedList<string>();
+            lst.AddLast("Peugeot");
+            lst.AddLast("Opel");
+
+            return lst;*/
         }
 
         public object Method3(int i, string str, object obj)

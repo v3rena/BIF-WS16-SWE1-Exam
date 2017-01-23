@@ -28,7 +28,7 @@ namespace BIF.SWE1.Exam
 
         public class SuperCoolPerson : Person
         {
-            override public virtual string Print()
+            override public string Print()
             {
                 return "Karin";
             }
@@ -42,21 +42,20 @@ namespace BIF.SWE1.Exam
             }
         }
 
-        public class Dateisystem
+        public abstract class Node
         {
-
+            public string Name { get; set; }
         }
 
-        public class File
+        public class File : Node
         {
-            string Name { get; }
-            string Content { get; }
+            public byte[] Content { get; set; }
         }
 
-        public class Directory
+        public class Directory : Node
         {
-            string name { get; }
-            List<File> Nodes;
+            public IEnumerable<Node> Nodes => NodeList;
+            internal List<Node> NodeList { get; set; } = new List<Node>();
         }
 
         public object Method1(int i, string str, object obj)
@@ -76,7 +75,16 @@ namespace BIF.SWE1.Exam
 
         public object Method4(int i, string str, object obj)
         {
-            return new Dateisystem();
+            List<object> newList = new List<object>();
+
+            Directory settings = new Directory() { Name = "Settings" };
+            settings.NodeList.Add(new File() { Name = "Properties.txt" });
+
+            newList.Add(new File() { Name = "Hello.txt" });
+            newList.Add(new Directory() { Name = "Empty" });
+            newList.Add(settings);
+        
+            return newList;
         }
 
         public object Method5(int i, string str, object obj)

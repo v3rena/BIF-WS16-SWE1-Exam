@@ -9,14 +9,47 @@ namespace BIF.SWE1.Exam
 {
     public class Exercise3Impl : IExercise3
     {
+        public class Cat : Pet
+        {
+            public override float Eat(float amount)
+            {
+                return amount * 0.5f;
+            }
+
+            public override string MakeSound()
+            {
+                return "Miau";
+            }
+
+            public override int Move(int direction)
+            {
+                return direction;
+            }
+        }
+
+        public class Figure
+        {
+            public void Draw() { }
+            public void Move(int dx, int dy) { }
+        }
+
+        public class Circle : Figure
+        {
+        }
+
+        public class Rectangle : Figure
+        {
+        }
+
+
         public object Method1(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+            return new Cat();
         }
 
         public object Method2(int i, string str, object obj)
         {
-            throw new NotImplementedException();
+            return new object[2] { new Circle(), new Rectangle() };
         }
 
         public object Method3(int i, string str, object obj)

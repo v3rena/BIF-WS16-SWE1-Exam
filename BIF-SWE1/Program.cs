@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace BIF.SWE1.Exam
 {
@@ -71,7 +72,7 @@ namespace BIF.SWE1.Exam
             Trap(() => { test.Method2(0, string.Empty, null); });
             Trap(() => { test.Method3(0, string.Empty, null); });
             Trap(() => { test.Method4(0, string.Empty, null); });
-            Trap(() => { test.Method5(0, string.Empty, null); });
+            //Trap(() => { test.Method5(0, string.Empty, null); });
         }
         /// <summary>
         /// Remove/Change anything you need to test your submission
@@ -83,9 +84,9 @@ namespace BIF.SWE1.Exam
             IExercise3 test = new Exercise3Impl();
             Trap(() => { test.Method1(0, string.Empty, null); });
             Trap(() => { test.Method2(0, string.Empty, null); });
-            Trap(() => { test.Method3(0, string.Empty, null); });
-            Trap(() => { test.Method4(0, string.Empty, null); });
-            Trap(() => { test.Method5(0, string.Empty, null); });
+            //Trap(() => { test.Method3(0, string.Empty, null); });
+            //Trap(() => { test.Method4(0, string.Empty, null); });
+            //Trap(() => { test.Method5(0, string.Empty, null); });
         }
         /// <summary>
         /// Remove/Change anything you need to test your submission
@@ -96,10 +97,13 @@ namespace BIF.SWE1.Exam
             Console.WriteLine("----------");
             IExercise4 test = new Exercise4Impl();
             Trap(() => { test.Method1(0, string.Empty, null); });
-            Trap(() => { test.Method2(0, string.Empty, null); });
-            Trap(() => { test.Method3(0, string.Empty, null); });
-            Trap(() => { test.Method4(0, string.Empty, null); });
-            Trap(() => { test.Method5(0, string.Empty, null); });
+
+            Stream myStream = (Stream)test.Method1(0, string.Empty, null);
+
+            Trap(() => { test.Method2(0, string.Empty, myStream); });
+            //Trap(() => { test.Method3(0, string.Empty, null); });
+            //Trap(() => { test.Method4(0, string.Empty, null); });
+            //Trap(() => { test.Method5(0, string.Empty, null); });
         }
         /// <summary>
         /// Remove/Change anything you need to test your submission
@@ -111,9 +115,9 @@ namespace BIF.SWE1.Exam
             IExercise5 test = new Exercise5Impl();
             Trap(() => { test.Method1(0, string.Empty, null); });
             Trap(() => { test.Method2(0, string.Empty, null); });
-            Trap(() => { test.Method3(0, string.Empty, null); });
-            Trap(() => { test.Method4(0, string.Empty, null); });
-            Trap(() => { test.Method5(0, string.Empty, null); });
+            //Trap(() => { test.Method3(0, string.Empty, null); });
+            //Trap(() => { test.Method4(0, string.Empty, null); });
+            //Trap(() => { test.Method5(0, string.Empty, null); });
         }
     }
 }
